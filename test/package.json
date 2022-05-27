@@ -1,0 +1,21 @@
+{
+  "name": "@shopee-data/test",
+  "version": "1.0.0",
+  "description": "jest test",
+  "indexHash": "bb335e8cb7f0b2baeaee",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "jest",
+    "test"
+  ],
+  "author": "di-fe",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.7",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.5"
+  }
+}

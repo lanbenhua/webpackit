@@ -1,0 +1,31 @@
+.reaction-menu-wrapper {
+  width: 256px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  .collapse-buttom {
+    height: 36px;
+    font-size: 18px;
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 9px;
+    padding-right: 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #000;
+    &:hover {
+      color: #2673dd;
+    }
+  }
+  &.menu-inlineCollapsed {
+    width: 42px;
+    .ant-menu-inline-collapsed {
+      width: 100%;
+    }
+  }
+  .reaction-menu {
+    user-select: none;
+  }
+}

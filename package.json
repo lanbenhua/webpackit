@@ -1,0 +1,80 @@
+{
+  "name": "@shopee-data/webpack-base-config",
+  "version": "0.5.0-beta1",
+  "description": "Webpack base configs for shopee data FE team",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "cd example && npm run start",
+    "build": "rm -rf lib && tsc",
+    "watch": "rm -rf lib && tsc -w",
+    "eslint": "eslint --max-warnings 0 --ext .ts,.js ./",
+    "test": "cd ./test && npm run test",
+    "test-install": "cd ./test && npm ci",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.garena.com/shopee-data/webpack-base-config"
+  },
+  "dependencies": {
+    "@mdap/script-attributes-html-webpack-plugin": "^0.1.0",
+    "@mdap/source-map-webpack-plugin": "^0.4.1",
+    "@shopee-data/di-mdap": "latest",
+    "@types/webpack-env": "^1.15.2",
+    "chalk": "^4.1.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "less": "^3.13.1",
+    "less-loader": "^7.2.0",
+    "mini-css-extract-plugin": "^1.3.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "react": "16.13.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^4.2.3",
+    "ts-loader": "^8.0.12",
+    "ts-node": "^9.1.1",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "4.1.3",
+    "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^4.4.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.7.3",
+    "webpackbar": "^5.0.0-3"
+  },
+  "devDependencies": {
+    "@types/mini-css-extract-plugin": "^1.2.2",
+    "@types/node": "^14.14.16",
+    "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
+    "@types/terser-webpack-plugin": "^4.2.0",
+    "@types/ua-parser-js": "^0.7.36",
+    "@types/webpack": "^4.41.25",
+    "@types/webpack-bundle-analyzer": "^3.9.0",
+    "@types/webpack-dev-server": "^3.11.1",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.2.9",
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --allow-empty"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run eslint"
+    ],
+    "*.{less,json,html}": [
+      "prettier --write"
+    ]
+  },
+  "author": "shopee data FE",
+  "license": "ISC"
+}

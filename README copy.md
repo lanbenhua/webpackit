@@ -1,5 +1,3 @@
-# wpack-starter-kit
-
 # webpack-base-config
 
 **`@shopee/webpack-base-config`** Provide a package for project of reaction-start-kit. Make the project more concise and the development more efficient.

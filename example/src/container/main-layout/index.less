@@ -1,0 +1,37 @@
+.common-sider {
+  display: flex;
+  .common-left-menu {
+    height: 100%;
+    font-size: 16px;
+  }
+  .common-content {
+    flex: 1;
+    height: 100%;
+    padding: 16px;
+    background: #f1f2f5;
+    display: flex;
+    flex-flow: column nowrap;
+    min-width: 0;
+    .scrollable-content {
+      flex: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      overflow: hidden;
+      .content-area {
+        flex: 1;
+        flex-flow: column nowrap;
+        overflow: auto;
+        .main-content {
+          background-color: #fff;
+          height: 100%;
+        }
+      }
+      .content-title {
+        display: flex;
+        line-height: 32px;
+        align-items: center;
+        padding: 0 0 16px 0;
+      }
+    }
+  }
+}

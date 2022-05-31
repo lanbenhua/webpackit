@@ -35,7 +35,7 @@ export interface WebpackConfigUserOptions {
   htmlTemplate?: string;
   productCode?: string;
   swaggerUrl?: string;
-  devHost?: string; // dev.datasuite.test.shopee.io
+  devHost?: string;
   externalCdnAssets?: { [key in keyof typeof defaultExternalAssets]?: ICdnAsset } &
     IKeyValue<ICdnAsset>;
   defineValues?: IKeyValue<string>;
@@ -46,7 +46,7 @@ export interface WebpackConfigUserOptions {
 }
 export interface ILocalConfigParams {
   /**
-   * ['key=value; Domain=.datasuite.test.shopee.io; Path=/;']
+   * ['key=value; Domain=xxx; Path=/;']
    */
   cookies: string[];
 }

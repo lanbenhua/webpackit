@@ -1,7 +1,7 @@
 {
-  "name": "@shopee-data/webpack-base-config",
+  "name": "webpackit",
   "version": "0.5.0-beta1",
-  "description": "Webpack base configs for shopee data FE team",
+  "description": "webpack base config util",
   "main": "lib/index.js",
   "scripts": {
     "start": "cd example && npm run start",
@@ -14,12 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git.garena.com/shopee-data/webpack-base-config"
+    "url": "https://github.com/lanbenhua/webpackit"
   },
   "dependencies": {
-    "@mdap/script-attributes-html-webpack-plugin": "^0.1.0",
-    "@mdap/source-map-webpack-plugin": "^0.4.1",
-    "@shopee-data/di-mdap": "latest",
     "@types/webpack-env": "^1.15.2",
     "chalk": "^4.1.0",
     "css-loader": "^5.0.1",
@@ -75,6 +72,6 @@
       "prettier --write"
     ]
   },
-  "author": "shopee data FE",
+  "author": "lanbenhua",
   "license": "ISC"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@shopee-data/test",
+  "name": "test",
   "version": "1.0.0",
   "description": "jest test",
   "indexHash": "bb335e8cb7f0b2baeaee",
@@ -10,7 +10,7 @@
     "jest",
     "test"
   ],
-  "author": "di-fe",
+  "author": "lanbenhua",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.4.0",

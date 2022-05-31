@@ -29,9 +29,6 @@ describe('defineConfig test', () => {
     expect(resConfigs.output.path).toBe(outPath);
     expect(resConfigs.externals).not.toBe(webpackConfigExternals);
     expect((resConfigs.externals as any)['echarts']).toBe('echarts');
-    expect((resConfigs.externals as any)['@shopee-data/monaco-editor']).toBe(
-      'ShopeeCDNMonacoEditor'
-    );
     expect((resConfigs.externals as any)['d3']).toBeUndefined();
     expect(resConfigs.plugins.length).toBe(7);
     expect(resConfigs.resolve).toBeDefined();

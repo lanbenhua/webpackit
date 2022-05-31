@@ -10,18 +10,7 @@ const packageJson = require(path.resolve(dirName, 'package.json'));
 export const packageName = packageJson.name.split('/').slice(-1)[0];
 export const microAppRootIdName = `${packageName}-root`;
 
-const jenkinsEnv = process.env.JENKINS_ENV || '';
-export const pathPrefix = `data_engineering_${packageName.replace(/-/g, '_')}_${
-  packageJson.indexHash || '__no_index_hash__'
-}`;
-
-export const assetsCdnHost = `static.idata-fe${isProd ? '' : '.test'}.shopee.io`;
-
-const createPublicPath = () => {
-  const url = jenkinsEnv ? `static.idata-fe.${jenkinsEnv}.shopee.io` : 'static.idata-fe.shopee.io';
-  if (!isProd) return '/';
-  return `//${url}/${pathPrefix}/`;
-};
+export const pathPrefix = ``;
 
 const createOutputPath = () => {
   if (!isProd) return '';
@@ -29,7 +18,7 @@ const createOutputPath = () => {
 };
 
 export const filename = isProd ? '[name].[contenthash]' : '[name]';
-export const publicPath = createPublicPath();
+export const publicPath = '/';
 export const outPath = `${dirName}/dist/${createOutputPath()}`;
 
 export const INDEPENDENT_APP_HTML_NAME = 'external.html';

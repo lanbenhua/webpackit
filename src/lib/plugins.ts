@@ -14,11 +14,6 @@ import {
   packageName,
 } from './constant';
 import WebpackBar from 'webpackbar';
-import InsertMdapJS from '../plugins/insert-mdap-js';
-import SourceMapPlugin from '@mdap/source-map-webpack-plugin';
-import { mdapSecretConfig } from '@shopee-data/di-mdap/lib/constant';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const ScriptAttrPlugin = require('@mdap/script-attributes-html-webpack-plugin');
 
 const logRunInfo = () => {
   let runInfoLogged = false;
@@ -28,7 +23,7 @@ const logRunInfo = () => {
     {
       productCode = '',
       swaggerUrl = '',
-      devHost = 'dev.datasuite.test.shopee.io',
+      devHost = 'xxx',
       type,
     }: WebpackConfigUserOptions,
     isUpdate = false
@@ -98,37 +93,6 @@ export const addWebpackBarPlugin = (
   );
 };
 
-const addMdapPlugins = (config: WebpackConfigurations, options: WebpackConfigUserOptions) => {
-  config.plugins.push(new InsertMdapJS());
-
-  if (!options.productCode) {
-    console.log(
-      chalk.red(`haven't provide productCode field, will not upload the sourceMap to mdap`)
-    );
-    return;
-  }
-  if (!isProd || !options.plugins.uploadSourceMapPlugin) return;
-
-  const mconfig = mdapSecretConfig[options.productCode as keyof typeof mdapSecretConfig];
-  if (!mconfig) {
-    console.log(chalk.red(`haven't provide mdap secret field, please check your productCode`));
-    return;
-  }
-
-  const env = process.env.JENKINS_ENV ? 'exp' : 'production';
-  const configEnv = process.env.JENKINS_ENV ? 'test' : 'live';
-  config.devtool = 'source-map';
-  config.plugins.push(
-    new SourceMapPlugin({
-      appName: options.productCode,
-      secret: mconfig[configEnv],
-      env,
-      appVersion: 'app_version',
-      autoDelete: true,
-    })
-  );
-};
-
 export const addDefaultWebpackPlugins = (
   config: WebpackConfigurations,
   options: WebpackConfigUserOptions
@@ -155,16 +119,12 @@ export const addDefaultWebpackPlugins = (
         template: options.htmlTemplate,
       })
     );
-    addMdapPlugins(config, options);
   }
 
   config.plugins.push(
     new HtmlWebpackCdnPlugin({
       externals: adapterExternalsCdnAssets(options.externalCdnAssets, config),
     }),
-    new ScriptAttrPlugin({
-      crossorigin: 'anonymous',
-    })
   );
 
   if (options.plugins.bundleAnalyzerPlugin) {

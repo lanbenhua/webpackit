@@ -1,11 +1,3 @@
-# wpack-starter-kit
-
-# webpack-base-config
-
-**`@shopee/webpack-base-config`** Provide a package for project of reaction-start-kit. Make the project more concise and the development more efficient.
-
-## development
-
 ### Install
 
 ```sh
@@ -101,31 +93,8 @@ If false, can stop the plugin from working
 {
   htmlTemplate: './src/app/index.html',
   defineValues: {
-    MOCK: '"/mock2"',
-    ASSET_CDN_HOST: '"static.idata-fe.${env}.shopee.io"'
   },
   externalCdnAssets: {
-    react: {
-      js: '//static.idata-fe.test.shopee.io/data_common_ed53e092952fa241f8f3/react@16.13.1.min.js',
-      priority: 9
-    },
-    'react-dom': {
-      js: '//static.idata-fe.test.shopee.io/data_common_ed53e092952fa241f8f3/react-dom@16.13.1.min.js',
-      priority: 8
-    },
-    'react-router-dom': {
-      js: '//static.idata-fe.test.shopee.io/data_common_ed53e092952fa241f8f3/react-router-dom@5.2.0.min.js',
-      priority: 0
-    },
-    antd: {
-      js: '//static.idata-fe.test.shopee.io/data_common_ed53e092952fa241f8f3/antd@4.9.4.min.js',
-      css: '//static.idata-fe.test.shopee.io/data_common_ed53e092952fa241f8f3/antd@4.9.4.min.css',
-      priority: 0
-    },
-    '@ant-design/icons': {
-      js: '//static.idata-fe.test.shopee.io/data_common_ed53e092952fa241f8f3/@ant-design/icons@4.3.0.min.js',
-      priority: 0
-    },
   },
   plugins: { bundleAnalyzerPlugin: true }
 }
